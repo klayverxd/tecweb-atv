@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Especificidade CSS</title>
+		<style>
+			#unico2 {
+				background-color: darkblue;
+			}
+
+			[wm-cor],
+			.estilo,
+			[cor]:hover {
+				background-color: #0ff;
+			}
+
+			div {
+				background-color: #f0f;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="unico1" class="estilo" style="background-color: black">estilo</div>
+		<div id="unico2" class="estilo">estilo</div>
+		<div class="estilo" wm-cor>estilo</div>
+		<div cor>estilo</div>
+		<div class="estilo">estilo</div>
+		<div>estilo</div>
+	</body>
+</html>
