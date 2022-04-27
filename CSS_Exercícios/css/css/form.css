@@ -1,0 +1,171 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: 'Oswald', sans-serif;
+	background-color: lightgray;
+}
+
+.cabecalho {
+	background: #333;
+	border-bottom: solid 5px #4faddb;
+	height: 80px;
+	box-sizing: content-box;
+}
+
+.logo {
+	display: inline-block;
+	height: 80px;
+	padding: 15px;
+}
+
+.logo img {
+	height: 100%;
+}
+
+.menu-toggle {
+	float: right;
+	color: #eee;
+	background-color: #555;
+	border: solid 1px #777;
+	border-radius: 5px;
+	height: 40px;
+	padding: 10px 20px;
+	margin: 20px 15px;
+}
+
+.menu {
+	display: inline-block;
+	vertical-align: top;
+	height: 80px;
+	padding: 25px;
+}
+
+.menu ul {
+	margin: 0;
+	padding: 0;
+}
+
+.menu li {
+	display: inline-block;
+}
+
+.cabecalho a {
+	text-decoration: none;
+	color: #eee;
+	font-size: 1.3em;
+}
+
+.menu a {
+	padding: 15px;
+}
+
+.autenticacao {
+	float: right;
+	height: 80px;
+	padding: 25px;
+}
+
+.menu a:hover,
+.menu a.selected {
+	background-color: #4faddb;
+	color: #000;
+}
+
+.botao {
+	border-radius: 30px;
+	padding: 10px 25px;
+	margin: 10px;
+}
+
+.destaque {
+	background: #f50a31;
+	color: #fff;
+}
+
+main {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: calc(100vh - 80px);
+}
+
+form {
+	display: flex;
+	background-color: darkgray;
+	border-radius: 5px;
+	flex-direction: column;
+	max-width: 600px;
+	padding: 30px 20px;
+	gap: 2vh;
+}
+
+form .row {
+	display: flex;
+	align-items: center;
+}
+
+input[type='text'],
+input[type='password'] {
+	background-color: lightgray;
+	border: 0;
+	border-radius: 2px;
+	color: black;
+	padding: 5px 8px;
+	margin-left: 5px;
+	width: 100%;
+}
+
+input[type='button'] {
+	background-color: lightgray;
+	border: 0;
+	border-radius: 2px;
+	color: black;
+	padding: 5px 8px;
+}
+
+input[type='button']:hover {
+	cursor: pointer;
+	box-shadow: 0 20px 20px rgba(0, 0, 0, 0);
+}
+
+@media (min-width: 679px) {
+	.menu-toggle {
+		display: none;
+	}
+}
+
+@media (max-width: 680px) {
+	.menu {
+		display: none;
+	}
+
+	form {
+		max-width: 100%;
+		width: 80%;
+		padding: 15px 10px;
+		gap: 2vh;
+	}
+
+	form .row {
+		flex-direction: column;
+	}
+
+	form label {
+		width: 100%;
+	}
+
+	input[type='text'],
+	input[type='password'] {
+		margin-left: 0px;
+	}
+}
+
+@media (max-width: 910px) {
+	.autenticacao {
+		display: none;
+	}
+}
