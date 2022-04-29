@@ -109,7 +109,9 @@ form .row {
 }
 
 input[type='text'],
-input[type='password'] {
+input[type='password'],
+input[type='email'],
+input[type='number'] {
 	background-color: lightgray;
 	border: 0;
 	border-radius: 2px;
@@ -159,7 +161,9 @@ input[type='button']:hover {
 	}
 
 	input[type='text'],
-	input[type='password'] {
+	input[type='password'],
+	input[type='email'],
+	input[type='number'] {
 		margin-left: 0px;
 	}
 }
