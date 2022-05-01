@@ -4,15 +4,60 @@
 		<meta charset="UTF-8" />
 		<title>Media Query</title>
 		<style>
-			@media only screen and (min-width: 320px) {
+			#div2 {
+				display: none;
+			}
+
+			@media (orientation: landscape) {
+				#div2 {
+					display: block;
+				}
+			}
+
+			@media (min-width: 320px) {
 				#div1 {
 					background-color: black;
+				}
+			}
+			@media (min-width: 480px) {
+				#div1 {
+					background-color: lightblue;
+				}
+			}
+			@media (min-width: 600px) {
+				#div1 {
+					background-color: lightgreen;
+				}
+			}
+			@media (min-width: 768px) {
+				#div1 {
+					background-color: lightyellow;
+				}
+			}
+			@media (min-width: 800px) {
+				#div1 {
+					background-color: brown;
+				}
+			}
+			@media (min-width: 1024px) {
+				#div1 {
+					background-color: darkblue;
+				}
+			}
+			@media (min-width: 1280px) {
+				#div1 {
+					background-color: darkgreen;
+				}
+			}
+			@media (min-width: 1440px) {
+				#div1 {
+					background-color: darkred;
 				}
 			}
 		</style>
 	</head>
 	<body>
 		<div id="div1">Div 1</div>
-		<div>Div 2</div>
+		<div id="div2">Div 2</div>
 	</body>
 </html>
