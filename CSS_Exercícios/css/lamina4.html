@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Flexbox #01</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				display: flex;
+			}
+
+			.flex-container {
+				display: flex;
+				flex-direction: row;
+				flex-flow: wrap;
+			}
+
+			.flex-container div {
+				background-color: blue;
+				padding: 50px 120px;
+				margin: 2px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="flex-container">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Flexbox #01</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			.flex-container {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.flex-container div {
+				background-color: blue;
+				padding: 20px 60px;
+				margin: 2px;
+			}
+
+			#div1 {
+				padding: 50px;
+			}
+			#div2 {
+				padding: 30px;
+			}
+			#div3 {
+				padding: 80px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="flex-container">
+			<div id="div1">1</div>
+			<div id="div2">2</div>
+			<div id="div3">3</div>
+		</div>
+	</body>
+</html>

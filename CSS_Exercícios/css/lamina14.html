@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Flexbox #01</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				display: flex;
+				justify-content: center;
+			}
+
+			.flex-container {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.flex-container div {
+				background-color: blue;
+				padding: 50px;
+				margin: 2px;
+			}
+
+			.flex-container div:nth-child(1) {
+				order: 1;
+			}
+			.flex-container div:nth-child(2) {
+				align-self: end;
+				order: 2;
+			}
+			.flex-container div:nth-child(3) {
+				order: 3;
+			}
+			.flex-container div:nth-child(4) {
+				order: 4;
+			}
+
+			.flex-container .red {
+				background-color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="flex-container">
+			<div>1</div>
+			<div class="red">2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+	</body>
+</html>
