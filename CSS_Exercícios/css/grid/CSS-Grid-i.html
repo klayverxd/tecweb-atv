@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS Grid I</title>
+		<style>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.container {
+				height: 100vh;
+
+				display: grid;
+				gap: 5px;
+
+				grid-template-areas:
+					'H C C C A A A'
+					'H C C C B B B'
+					'H C C C D D D'
+					'H C C C E E E';
+			}
+
+			.container div {
+				background-color: lightgray;
+			}
+
+			.blue {
+				color: white;
+				background-color: blue !important;
+			}
+			.white {
+				background-color: white !important;
+			}
+			.A {
+				grid-area: A;
+			}
+			.B {
+				grid-area: B;
+			}
+			.C {
+				grid-area: C;
+			}
+			.D {
+				grid-area: D;
+			}
+			.E {
+				grid-area: E;
+			}
+			.H {
+				grid-area: H;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="A">A</div>
+			<div class="B">B</div>
+			<div class="C white">C</div>
+			<div class="D">D</div>
+			<div class="E">E</div>
+			<div class="H blue">H</div>
+		</div>
+	</body>
+</html>

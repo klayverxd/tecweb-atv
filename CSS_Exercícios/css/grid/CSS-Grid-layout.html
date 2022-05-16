@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS Grid LAYOUT</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			a {
+				text-decoration: none;
+				color: white;
+				margin-right: 50px;
+			}
+
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+					'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+			}
+			.container {
+				height: 100vh;
+			}
+
+			header {
+				height: 10vh;
+				background-color: gray;
+				display: flex;
+				justify-content: space-between;
+
+				align-items: center;
+
+				padding: 0 2vw;
+			}
+
+			header .menu {
+				display: none;
+			}
+
+			header nav a:last-child {
+				margin-right: 0;
+			}
+
+			.menu-hidden {
+				display: none;
+			}
+
+			main {
+				height: 80vh;
+				padding: 2vw;
+
+				display: grid;
+				grid-template-areas:
+					'p1 p2 p3'
+					'p1 p2 p3'
+					'i1 i2 b'
+					'i3 i4 b'
+					'i5 i6 b';
+
+				gap: 10px;
+			}
+
+			.postagem1 {
+				grid-area: p1;
+			}
+			.postagem2 {
+				grid-area: p2;
+			}
+			.postagem3 {
+				grid-area: p3;
+			}
+			.item1,
+			.item2,
+			.item3,
+			.item4,
+			.item5,
+			.item6 {
+				display: flex;
+				align-items: center;
+			}
+			.item1 {
+				grid-area: i1;
+			}
+			.item2 {
+				grid-area: i2;
+			}
+			.item3 {
+				grid-area: i3;
+			}
+			.item4 {
+				grid-area: i4;
+			}
+			.item5 {
+				grid-area: i5;
+			}
+			.item6 {
+				grid-area: i6;
+			}
+			.banner {
+				grid-area: b;
+
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+			}
+
+			.imgPost {
+				background-color: lightgray;
+				height: 150px;
+			}
+
+			.imgItems {
+				background-color: lightgray;
+				height: 70%;
+				width: 35%;
+				margin-right: 10px;
+			}
+
+			.imgBanner {
+				border: 3px solid gray;
+				height: 80%;
+			}
+
+			footer {
+				height: 10vh;
+				width: 100%;
+				background-color: gray;
+				display: flex;
+				align-items: center;
+				padding: 0 2vw;
+			}
+
+			footer p {
+				color: white;
+			}
+
+			@media (max-width: 506px) {
+				header {
+					height: 6vh;
+					position: relative;
+				}
+
+				header .menu {
+					display: block;
+					cursor: pointer;
+					font-size: 32px;
+				}
+
+				header nav {
+					display: none;
+				}
+
+				main {
+					grid-template-areas:
+						'p1'
+						'p2'
+						'p3'
+						'i1'
+						'i2'
+						'i3'
+						'i4'
+						'i5'
+						'i6'
+						'b';
+
+					row-gap: 20px;
+
+					height: calc(100vh - 12vh);
+				}
+
+				footer {
+					position: fixed;
+					height: 6vh;
+				}
+
+				.banner {
+					margin-bottom: 400px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1>Marca</h1>
+				<nav>
+					<a href="#">Home</a>
+					<a href="#">Somos</a>
+					<a href="#">Serviços</a>
+					<a href="#">Contato</a>
+				</nav>
+				<div class="menu">=</div>
+			</header>
+			<main>
+				<div class="postagem1">
+					<div class="imgPost">img</div>
+					<p>Postagem 1</p>
+				</div>
+				<div class="postagem2">
+					<div class="imgPost">img</div>
+					<p>Postagem 2</p>
+				</div>
+				<div class="postagem3">
+					<div class="imgPost">img</div>
+					<p>Postagem 2</p>
+				</div>
+				<div class="item1">
+					<div class="imgItems">img</div>
+					<p>Item 1</p>
+				</div>
+				<div class="item2">
+					<div class="imgItems">img</div>
+					<p>Item 2</p>
+				</div>
+				<div class="item3">
+					<div class="imgItems">img</div>
+					<p>Item 3</p>
+				</div>
+				<div class="item4">
+					<div class="imgItems">img</div>
+					<p>Item 4</p>
+				</div>
+				<div class="item5">
+					<div class="imgItems">img</div>
+					<p>Item 5</p>
+				</div>
+				<div class="item6">
+					<div class="imgItems">img</div>
+					<p>Item 6</p>
+				</div>
+				<div class="banner">
+					<div class="imgBanner">img</div>
+					<p><b>Banner</b></p>
+				</div>
+			</main>
+			<footer>
+				<p>Copyright - todos os direitos reservados</p>
+			</footer>
+		</div>
+	</body>
+</html>
