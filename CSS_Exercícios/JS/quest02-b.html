@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calculadora</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+					'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+			}
+
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+
+				height: 100vh;
+			}
+
+			header {
+				display: flex;
+				justify-content: center;
+				font-size: 2em;
+
+				margin-bottom: 20px;
+			}
+
+			.container {
+				display: grid;
+
+				width: 100%;
+			}
+
+			#display {
+				grid-column: span 4;
+				background-color: #0004;
+
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+
+				padding: 20px;
+				font-size: 1.8em;
+				overflow: hidden;
+			}
+
+			button {
+				font-size: 1.4em;
+
+				background-color: lightgray;
+				border: 1px solid gray;
+
+				width: 80px;
+				margin: 2px;
+				padding: 10px 0;
+				outline: none;
+
+				cursor: pointer;
+
+				transition: ease 0.15s;
+			}
+
+			button:hover {
+				background-color: gray;
+			}
+		</style>
+	</head>
+	<body>
+		<header>Calculadora</header>
+		<main>
+			<div class="container">
+				<div id="display">0</div>
+				<button onclick="handleValues(7)">7</button>
+				<button onclick="handleValues(8)">8</button>
+				<button onclick="handleValues(9)">9</button>
+				<button onclick="handleOperation('/')">/</button>
+				<button onclick="handleValues(4)">4</button>
+				<button onclick="handleValues(5)">5</button>
+				<button onclick="handleValues(6)">6</button>
+				<button onclick="handleOperation('*')">*</button>
+				<button onclick="handleValues(1)">1</button>
+				<button onclick="handleValues(2)">2</button>
+				<button onclick="handleValues(3)">3</button>
+				<button onclick="handleOperation('-')">-</button>
+				<button onclick="handleValues(0)">0</button>
+				<button onclick="handleOperation('=')">=</button>
+				<button onclick="reset()">C</button>
+				<button onclick="handleOperation('+')">+</button>
+			</div>
+		</main>
+	</body>
+	<script>
+		let values = [0, 0]
+		let operation = null
+		let result = null
+
+		let display = document.getElementById('display')
+
+		const handleValues = value => {
+			if (!operation) {
+				values[0] = parseInt(`${values[0]}${value}`)
+				display.innerHTML = values[0]
+			} else {
+				values[1] = parseInt(`${values[1]}${value}`)
+				display.innerHTML = `${values[0]} ${operation} ${values[1]}`
+			}
+		}
+
+		const handleOperation = operationValue => {
+			if (operationValue === '=') {
+				result = eval(`${values[0]} ${operation} ${values[1]}`)
+				display.innerHTML = result
+			} else {
+				operation = operationValue
+				display.innerHTML = `${values[0]} ${operation}`
+			}
+		}
+
+		const reset = () => {
+			values = [0, 0]
+			operation = null
+			result = null
+
+			display.innerHTML = 0
+		}
+	</script>
+</html>
