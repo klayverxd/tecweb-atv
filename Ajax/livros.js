@@ -1,4 +1,6 @@
 let url_books = 'https://mockapiajax.herokuapp.com/livro'
+let url_rent_books = 'https://mockapiajax.herokuapp.com/aluguel'
+let url_sell_books = 'https://mockapiajax.herokuapp.com/venda'
 
 function newElement(tagName, className) {
 	const elemento = document.createElement(tagName)
@@ -52,9 +54,9 @@ function cadastraLivro() {
 		},
 		method: 'POST',
 		body: JSON.stringify({
-			id: '778',
+			id: 'kx-777',
 			num_livro: '777',
-			autor: 'Sem autor',
+			autor: 'KXD',
 			nome_livro: 'Nome do livro',
 			data_cadastro: '31/02/2022',
 			descricao: 'Auto descrição',
@@ -82,7 +84,7 @@ function deletaLivro() {
 }
 
 function atualizaLivro() {
-	fetch(url_books + '/1', {
+	fetch(url_rent_books, {
 		headers: {
 			Accept: 'application/json',
 			'Content-Type': 'application/json',
@@ -91,7 +93,7 @@ function atualizaLivro() {
 		body: JSON.stringify({
 			num_livro: '777',
 			autor: 'Sem autor',
-			nome_livro: 'Nome do livro',
+			nome_livro: 'Nome do livro 2.0',
 			data_cadastro: '31/02/2022',
 			descricao: 'Auto descrição',
 			tipo: 'Computa',
@@ -99,6 +101,43 @@ function atualizaLivro() {
 			quantidade_estoque_aluguel: '333',
 			valor_venda: '77,77',
 			valor_aluguel: '7,77',
+		}),
+	})
+		.then(res => console.log(res))
+		.catch(error => alert(error))
+}
+
+function alugaLivro() {
+	fetch(url_rent_books, {
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json',
+		},
+		method: 'POST',
+		body: JSON.stringify({
+			id: '777',
+			id_livro: 'kx-777',
+			id_cliente: '333',
+			data_aluguel: '21/06/2022',
+			dias: '777',
+		}),
+	})
+		.then(res => console.log(res))
+		.catch(error => alert(error))
+}
+
+function vendeLivro() {
+	fetch(url_sell_books, {
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json',
+		},
+		method: 'POST',
+		body: JSON.stringify({
+			id: '777',
+			id_livro: 'kx-777',
+			id_cliente: '777',
+			data_venda: '27/05/2022',
 		}),
 	})
 		.then(res => console.log(res))
